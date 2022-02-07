@@ -58,5 +58,4 @@ def alg30 (a, b, n):
             f += a ** i + b ** j
     return f
 
-print(alg30(2, 2, 6))
 

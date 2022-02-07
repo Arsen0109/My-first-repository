@@ -10,13 +10,15 @@ def but_result1():
 
     # check for input errors
     try:
-        _a = ent_a1.get()
-        _b = ent_b1.get()
-        _c = ent_c1.get()
-        if _a == '' or _b == '' or _c == '':
+        _a = int(ent_a1.get())
+        _b = int(ent_b1.get())
+        _c = int(ent_c1.get())
+        _d = int(ent_d1.get())
+        _x = int(ent_x1.get())
+        if _a == '' or _b == '' or _c == '' or _d == '' or _x == '':
             _res = 'You must fill in all the fields!'
         else:
-            _res = round(algs.alg1(int(_a), int(_b), int(_c)), 3)
+            _res = round(algs.alg10(int(_a), int(_b), int(_c), int(_d), int(_x)), 3)
     except: _res = 'There are non-numeric symbols in your input.'
 
     # determination of the coordinates on which the result will appear
@@ -161,36 +163,39 @@ def show_flowchart3():
 
 
 def but1_bind():
-    """Appear fields to determine the variables of the algorithm 1."""
-
-    global ent_a1, ent_b1, ent_c1
     root.geometry('1150x570')
+    global ent_a1, ent_b1, ent_c1, ent_d1, ent_x1
 
-    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color1)\
+    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
 
-    Label(root, text='a', justify=RIGHT, font=main_font, bg=bg_color1).grid(column=2, row=1, sticky=E)
-    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color1).grid(column=2, row=3, sticky=E)
-    Label(root, text='c', justify=RIGHT, font=main_font, bg=bg_color1).grid(column=2, row=5, sticky=E)
+    Label(root, text='a', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
+    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
+    Label(root, text='c', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
+    Label(root, text='d', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=6, row=1, sticky=E)
+    Label(root, text='x', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=6, row=3, sticky=E)
 
     ent_a1 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_b1 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_c1 = Entry(root, font='Calibri 14', width=10, bd=0)
+    ent_d1 = Entry(root, font='Calibri 14', width=10, bd=0)
+    ent_x1 = Entry(root, font='Calibri 14', width=10, bd=0)
 
     ent_a1.grid(column=3, row=1, columnspan=2, sticky=W, padx=5)
     ent_b1.grid(column=3, row=3, columnspan=2, sticky=W, padx=5)
     ent_c1.grid(column=3, row=5, columnspan=2, sticky=W, padx=5)
+    ent_d1.grid(column=7, row=1, columnspan=2, sticky=W, padx=5)
+    ent_x1.grid(column=7, row=3, columnspan=2, sticky=W, padx=5)
 
-    Button(root, text='Result', font=main_font, bg='deep sky blue', command=but_result1).grid(column=3, row=7)
-    Button(root, text='Show flowchart', font=main_font, bg='deep sky blue', command=show_flowchart1)\
+    Button(root, text='Result', font=main_font, bg='chartreuse2', command=but_result1).grid(column=3, row=7)
+    Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart2)\
         .grid(column=6, row=7, columnspan=3)
-
 
 def but2_bind():
     """Appear fields to determine the variables of the algorithm 2."""
 
-    global ent_b2, ent_z2, ent_d2, ent_w2, ent_f2
     root.geometry('1150x570')
+    global ent_b2, ent_z2, ent_w2, ent_d2, ent_f2
 
     Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
@@ -253,38 +258,6 @@ if __name__ == '__main__':
     bg_color3 = 'gold'
     main_font = 'Verdana 14'
 
-
-    def factorial(x):
-        if x < 0:
-            raise ValueError
-        else:
-            res = 1
-            for i in list(range(x)):
-                res = res * (i + 1)
-            return res
-
-
-    def alg1(a, b, c):
-        return (a * c) ** 2 + (b * c) ** 3 + c ** 8
-
-
-    def alg2(b, z, d, w, f):
-        from math import sin, cos
-
-        if z == 0:
-            return 'ZeroDivisonError. Check your input.'
-        elif b / z > d:
-            return sin(w * f)
-        else:
-            return cos(w * f)
-
-
-    def alg3(a, b):
-        if a - b < 0:
-            return 'a-b < 0. Enable to calculate (a-b)!.\n' \
-                   'Check your input.'
-        else:
-            return factorial(a) * b / factorial(a - b)
 
 
     # main buttons
