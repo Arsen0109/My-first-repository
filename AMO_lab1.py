@@ -2,7 +2,6 @@ from tkinter import *
 from PIL import Image, ImageTk
 import algs
 
-
 def but_result1():
     """Shows results of the algorithm 1 or error message."""
 
@@ -18,7 +17,7 @@ def but_result1():
         if _a == '' or _b == '' or _c == '' or _d == '' or _x == '':
             _res = 'You must fill in all the fields!'
         else:
-            _res = round(algs.alg10(int(_a), int(_b), int(_c), int(_d), int(_x)), 3)
+            _res = algs.alg10(int(_a), int(_b), int(_c), int(_d), int(_x))
     except: _res = 'There are non-numeric symbols in your input.'
 
     # determination of the coordinates on which the result will appear
@@ -45,15 +44,14 @@ def but_result2():
 
     # check for input errors
     try:
-        _b = int(ent_b2.get())
+        _x = int(ent_x2.get())
+        _y = int(ent_y2.get())
         _z = int(ent_z2.get())
-        _d = int(ent_d2.get())
-        _w = int(ent_w2.get())
-        _f = int(ent_f2.get())
-        if _b == '' or _z == '' or _d == '' or _w == '' or _f == '':
+
+        if _x == '' or _y == '' or _z == '':
             _res = 'You must fill in all the fields!'
         else:
-            _res = round(algs.alg2(int(_b), int(_z), int(_d), int(_w), int(_f)), 3)
+            _res = algs.alg20(int(_x), int(_y), int(_z))
     except: _res = 'There are non-numeric symbols in your input.'
 
     # determination of the coordinates on which the result will appear
@@ -69,7 +67,7 @@ def but_result2():
     try:
         l2.destroy()
     finally:
-        l2 = Label(root, text=_res, font=main_font, bg=bg_color2)
+        l2 = Label(root, text=f'y={_res}', font=main_font, bg=bg_color2)
         l2.grid(column=_c, row=_r, columnspan=_cs, sticky=W)
 
 
@@ -82,10 +80,11 @@ def but_result3():
     try:
         _a = int(ent_a3.get())
         _b = int(ent_b3.get())
-        if _a == '' or _b == '':
+        _n = int(ent_n3.get())
+        if _a == '' or _b == '' or _n == '':
             _res = 'You must fill in all the fields!'
         else:
-            _res = round(algs.alg3(int(_a), int(_b)), 3)
+            _res = algs.alg30(int(_a), int(_b), int(_n))
     except: _res = 'There are non-numeric symbols in your input.'
 
     # determination of the coordinates on which the result will appear
@@ -108,7 +107,7 @@ def but_result3():
 def show_flowchart1():
     """Shows block diagram of a linear algorithm in new Toplevel window."""
 
-    _flowchart1 = PhotoImage(file=r"C:\Users\User\OneDrive\Робочий стіл\my first html\images\images.jpg")
+    _flowchart1 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
 
     slave1 = Toplevel(root)
     slave1.focus_set()
@@ -127,7 +126,7 @@ def show_flowchart1():
 def show_flowchart2():
     """Shows block diagram of branching algorithm in new Toplevel window."""
 
-    _flowchart2 = PhotoImage(file=r"C:\Users\User\OneDrive\Робочий стіл\my first html\images\images.jpg")
+    _flowchart2 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
 
     slave2 = Toplevel(root)
     slave2.focus_set()
@@ -146,7 +145,7 @@ def show_flowchart2():
 def show_flowchart3():
     """Shows block diagram of a cyclic algorithm in new Toplevel window."""
 
-    _flowchart3 = PhotoImage(file=r"C:\Users\User\OneDrive\Робочий стіл\my first html\images\images.jpg")
+    _flowchart3 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
 
     slave3 = Toplevel(root)
     slave3.focus_set()
@@ -195,28 +194,22 @@ def but2_bind():
     """Appear fields to determine the variables of the algorithm 2."""
 
     root.geometry('1150x570')
-    global ent_b2, ent_z2, ent_w2, ent_d2, ent_f2
+    global ent_x2, ent_y2, ent_z2
 
     Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
 
-    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
-    Label(root, text='z', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
-    Label(root, text='d', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
-    Label(root, text='w', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=6, row=1, sticky=E)
-    Label(root, text='f', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=6, row=3, sticky=E)
+    Label(root, text='x', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
+    Label(root, text='y', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
+    Label(root, text='z', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
 
-    ent_b2 = Entry(root, font='Calibri 14', width=10, bd=0)
+    ent_x2 = Entry(root, font='Calibri 14', width=10, bd=0)
+    ent_y2 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_z2 = Entry(root, font='Calibri 14', width=10, bd=0)
-    ent_d2 = Entry(root, font='Calibri 14', width=10, bd=0)
-    ent_w2 = Entry(root, font='Calibri 14', width=10, bd=0)
-    ent_f2 = Entry(root, font='Calibri 14', width=10, bd=0)
 
-    ent_b2.grid(column=3, row=1, columnspan=2, sticky=W, padx=5)
-    ent_z2.grid(column=3, row=3, columnspan=2, sticky=W, padx=5)
-    ent_d2.grid(column=3, row=5, columnspan=2, sticky=W, padx=5)
-    ent_w2.grid(column=7, row=1, columnspan=2, sticky=W, padx=5)
-    ent_f2.grid(column=7, row=3, columnspan=2, sticky=W, padx=5)
+    ent_x2.grid(column=3, row=1, columnspan=2, sticky=W, padx=5)
+    ent_y2.grid(column=3, row=3, columnspan=2, sticky=W, padx=5)
+    ent_z2.grid(column=3, row=5, columnspan=2, sticky=W, padx=5)
 
     Button(root, text='Result', font=main_font, bg='chartreuse2', command=but_result2).grid(column=3, row=7)
     Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart2)\
@@ -224,25 +217,26 @@ def but2_bind():
 
 
 def but3_bind():
-    """Appear fields to determine the variables of the algorithm 3."""
-
-    global ent_a3, ent_b3
     root.geometry('1150x570')
+    global ent_a3, ent_b3, ent_n3
 
-    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color3)\
+    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
 
-    Label(root, text='a', justify=RIGHT, font=main_font, bg=bg_color3).grid(column=2, row=1, sticky=E)
-    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color3).grid(column=2, row=3, sticky=E)
+    Label(root, text='a', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
+    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
+    Label(root, text='n', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
 
     ent_a3 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_b3 = Entry(root, font='Calibri 14', width=10, bd=0)
+    ent_n3 = Entry(root, font='Calibri 14', width=10, bd=0)
 
     ent_a3.grid(column=3, row=1, columnspan=2, sticky=W, padx=5)
     ent_b3.grid(column=3, row=3, columnspan=2, sticky=W, padx=5)
+    ent_n3.grid(column=3, row=5, columnspan=2, sticky=W, padx=5)
 
-    Button(root, text='Result', font=main_font, bg='orange', command=but_result3).grid(column=3, row=7)
-    Button(root, text='Show flowchart', font=main_font, bg='orange', command=show_flowchart3)\
+    Button(root, text='Result', font=main_font, bg='chartreuse2', command=but_result3).grid(column=3, row=7)
+    Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart2)\
         .grid(column=6, row=7, columnspan=3)
 
 
@@ -257,8 +251,6 @@ if __name__ == '__main__':
     bg_color2 = 'green'
     bg_color3 = 'blue'
     main_font = 'Verdana 14'
-
-
 
     # main buttons
     photo1 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
