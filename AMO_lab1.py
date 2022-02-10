@@ -253,9 +253,9 @@ if __name__ == '__main__':
     root.geometry('370x570')
 
     # set background
-    bg_color1 = 'sky blue'
-    bg_color2 = 'green yellow'
-    bg_color3 = 'gold'
+    bg_color1 = 'red'
+    bg_color2 = 'green'
+    bg_color3 = 'blue'
     main_font = 'Verdana 14'
 
 
