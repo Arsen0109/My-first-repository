@@ -162,17 +162,19 @@ def show_flowchart3():
 
 
 def but1_bind():
-    root.geometry('1150x570')
+    root.geometry('1150x680')
+    root["bg"] = "yellow"
+
     global ent_a1, ent_b1, ent_c1, ent_d1, ent_x1
 
-    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
+    Label(root, text='', font='Calibri 14', width=80, height=25, bg="yellow")\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
 
-    Label(root, text='a', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
-    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
-    Label(root, text='c', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
-    Label(root, text='d', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=6, row=1, sticky=E)
-    Label(root, text='x', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=6, row=3, sticky=E)
+    Label(root, text='a', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=1, sticky=E)
+    Label(root, text='b', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=3, sticky=E)
+    Label(root, text='c', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=5, sticky=E)
+    Label(root, text='d', justify=RIGHT, font=main_font, bg="yellow").grid(column=6, row=1, sticky=E)
+    Label(root, text='x', justify=RIGHT, font=main_font, bg="yellow").grid(column=6, row=3, sticky=E)
 
     ent_a1 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_b1 = Entry(root, font='Calibri 14', width=10, bd=0)
@@ -193,15 +195,16 @@ def but1_bind():
 def but2_bind():
     """Appear fields to determine the variables of the algorithm 2."""
 
-    root.geometry('1150x570')
+    root.geometry('1150x680')
     global ent_x2, ent_y2, ent_z2
+    root["bg"] = "yellow"
 
-    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
+    Label(root, text='', font='Calibri 14', width=80, height=25, bg="yellow")\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
 
-    Label(root, text='x', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
-    Label(root, text='y', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
-    Label(root, text='z', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
+    Label(root, text='x', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=1, sticky=E)
+    Label(root, text='y', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=3, sticky=E)
+    Label(root, text='z', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=5, sticky=E)
 
     ent_x2 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_y2 = Entry(root, font='Calibri 14', width=10, bd=0)
@@ -217,15 +220,16 @@ def but2_bind():
 
 
 def but3_bind():
-    root.geometry('1150x570')
+    root.geometry('1150x680')
     global ent_a3, ent_b3, ent_n3
+    root["bg"] = "yellow"
 
-    Label(root, text='', font='Calibri 14', width=80, height=25, bg=bg_color2)\
+    Label(root, text='', font='Calibri 14', width=80, height=25, bg="yellow")\
         .grid(row=0, column=1, rowspan=12, columnspan=10)
 
-    Label(root, text='a', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=1, sticky=E)
-    Label(root, text='b', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=3, sticky=E)
-    Label(root, text='n', justify=RIGHT, font=main_font, bg=bg_color2).grid(column=2, row=5, sticky=E)
+    Label(root, text='a', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=1, sticky=E)
+    Label(root, text='b', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=3, sticky=E)
+    Label(root, text='n', justify=RIGHT, font=main_font, bg="yellow").grid(column=2, row=5, sticky=E)
 
     ent_a3 = Entry(root, font='Calibri 14', width=10, bd=0)
     ent_b3 = Entry(root, font='Calibri 14', width=10, bd=0)
@@ -244,7 +248,7 @@ if __name__ == '__main__':
     root = Tk()
     root.title('Main window')
     root.resizable(width=False, height=False)
-    root.geometry('370x570')
+    root.geometry('370x680')
 
     # set background
     bg_color1 = 'red'
@@ -253,15 +257,15 @@ if __name__ == '__main__':
     main_font = 'Verdana 14'
 
     # main buttons
-    photo1 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
-    photo2 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
-    photo3 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
+    photo1 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\picslab1\alg1.png")
+    photo2 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\picslab1\alg2.png")
+    photo3 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\picslab1\alg3.png")
 
     Button(root, compound=BOTTOM, image=photo1, bd=0, text='Algorithm 1\n', relief=GROOVE, width=370, height=190,
            font='Verdana 16 bold', bg=bg_color1, activebackground=bg_color1, command=but1_bind)\
         .grid(column=0, row=0, rowspan=4,)
 
-    Button(root, compound=BOTTOM, image=photo2, bd=0, text='Algorithm 2\n', relief=GROOVE, width=370, height=190,
+    Button(root, compound=BOTTOM, image=photo2, bd=0, text='Algorithm 2\n', relief=GROOVE, width=370, height=300,
            font='Verdana 16 bold', bg=bg_color2, activebackground=bg_color2, command=but2_bind)\
         .grid(column=0, row=4, rowspan=4,)
 
