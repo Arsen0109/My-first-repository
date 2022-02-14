@@ -23,7 +23,7 @@ def alg20 (x, y, z):
         else:
             return "Error division to 0"
     else:
-        return "Underfined, more then one variable bigger than 0"
+        return "Underfined, no variables bigger than 0"
 
 def alg30 (a, b, n):
     f = 0

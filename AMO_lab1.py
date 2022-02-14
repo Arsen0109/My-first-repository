@@ -107,7 +107,7 @@ def but_result3():
 def show_flowchart1():
     """Shows block diagram of a linear algorithm in new Toplevel window."""
 
-    _flowchart1 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
+    _flowchart1 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\picslab1\flow1.png")
 
     slave1 = Toplevel(root)
     slave1.focus_set()
@@ -126,7 +126,7 @@ def show_flowchart1():
 def show_flowchart2():
     """Shows block diagram of branching algorithm in new Toplevel window."""
 
-    _flowchart2 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
+    _flowchart2 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\picslab1\flow2.png")
 
     slave2 = Toplevel(root)
     slave2.focus_set()
@@ -145,7 +145,7 @@ def show_flowchart2():
 def show_flowchart3():
     """Shows block diagram of a cyclic algorithm in new Toplevel window."""
 
-    _flowchart3 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\test.png")
+    _flowchart3 = PhotoImage(file=r"C:\Users\User\PycharmProjects\pythonProject8\picslab1\flow3.png")
 
     slave3 = Toplevel(root)
     slave3.focus_set()
@@ -189,7 +189,7 @@ def but1_bind():
     ent_x1.grid(column=7, row=3, columnspan=2, sticky=W, padx=5)
 
     Button(root, text='Result', font=main_font, bg='chartreuse2', command=but_result1).grid(column=3, row=7)
-    Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart2)\
+    Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart1)\
         .grid(column=6, row=7, columnspan=3)
 
 def but2_bind():
@@ -240,7 +240,7 @@ def but3_bind():
     ent_n3.grid(column=3, row=5, columnspan=2, sticky=W, padx=5)
 
     Button(root, text='Result', font=main_font, bg='chartreuse2', command=but_result3).grid(column=3, row=7)
-    Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart2)\
+    Button(root, text='Show flowchart', font=main_font, bg='chartreuse2', command=show_flowchart3)\
         .grid(column=6, row=7, columnspan=3)
 
 
